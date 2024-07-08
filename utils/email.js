@@ -3,11 +3,10 @@ const nodemailer = require('nodemailer');
 
 // Create a transporter object using SendGrid SMTP transport
 const transporter = nodemailer.createTransport({
-  host: 'smtp.sendgrid.net',
-  port: 587,
+  service: 'Gmail',
   auth: {
-    user: 'apikey', // This is the fixed value 'apikey' for SendGrid
-    pass: process.env.SENDGRID_API_KEY // Your SendGrid API key
+    user: process.env.EMAIL,
+    pass: process.env.PASSWORD
   }
 });
 
